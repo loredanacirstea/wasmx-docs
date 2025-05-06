@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwasmx_docs=self.webpackChunkwasmx_docs||[]).push([[121],{8070:s=>{s.exports=JSON.parse('{"tags":[{"label":"wasmx","permalink":"/blog/tags/wasmx","description":"wasmx tag description","count":2}]}')}}]);

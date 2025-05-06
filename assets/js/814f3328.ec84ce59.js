@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwasmx_docs=self.webpackChunkwasmx_docs||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"why wasmX?","permalink":"/blog/why-wasmx","unlisted":false,"date":"2025-05-07T00:00:00.000Z"},{"title":"MDX Example","permalink":"/blog/mdx-example","unlisted":false,"date":"2025-04-01T00:00:00.000Z"}]}')}}]);
