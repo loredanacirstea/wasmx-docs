@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Flexible',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/flexible.svg').default,
     description: (
       <>
         Multi VM, language-agnostic, general & domain-specific language interpreters, variety of host APIs.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/livebuild.svg').default,
     description: (
       <>
         Discover new consensus algorithms, new multichain architectures, new core protocols, without even stopping the chain.
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Powered by WASM',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/wasm_blocks.svg').default,
     description: (
       <>
         Build and extend your chain with WASM contracts.

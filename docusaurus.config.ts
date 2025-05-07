@@ -66,11 +66,11 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/wasmx.png',
     navbar: {
       title: 'wasmX',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'wasmX logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -113,7 +113,7 @@ const config: Config = {
             },
             {
               label: 'X',
-              href: 'https://x.com/docusaurus',
+              href: 'https://x.com/lorecirstea',
             },
           ],
         },

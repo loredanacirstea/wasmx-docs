@@ -1,4 +1,44 @@
+blockchain:
+  label: blockchain
+  permalink: /blockchain
+  description: blockchain tag description
+
 wasmx:
   label: wasmx
   permalink: /wasmx
   description: wasmx tag description
+
+mythos:
+  label: mythos
+  permalink: /mythos
+  description: mythos tag description
+
+treechains:
+  label: treechains
+  permalink: /treechains
+  description: treechains tag description
+
+webassembly:
+  label: webassembly
+  permalink: /webassembly
+  description: webassembly tag description
+
+consensusless:
+  label: consensusless
+  permalink: /consensusless
+  description: consensusless tag description
+
+scaling:
+  label: scaling
+  permalink: /scaling
+  description: scaling tag description
+
+networkstate:
+  label: networkstate
+  permalink: /networkstate
+  description: networkstate tag description
+
+email:
+  label: email
+  permalink: /email
+  description: email tag description
