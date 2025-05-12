@@ -4,40 +4,41 @@ sidebar_position: 1
 
 # Introduction
 
-**wasmX** is a next-generation modular blockchain engine where the entire protocol stack—including consensus logic and core blockchain behavior—is implemented as WebAssembly (WASM) smart contracts. This radical modularity enables full programmability and upgradability at every layer of the blockchain, empowering developers with unprecedented flexibility and control.
+**wasmX** is a next-generation modular blockchain engine where the entire protocol stack, including consensus logic and core blockchain behavior, is implemented as WebAssembly (WASM) smart contracts.
+
+This radical modularity enables full programmability and upgradability at every layer of the blockchain, empowering developers with unprecedented flexibility and control.
+
+## wasmX platform: truly decentralized development
+
+wasmX enables fully independent (teams of) developers to work in parallel and in any language that can be compiled to WASM.
+wasmX blockchains can be upgraded while they are running, through on-chain governance, achieving full programmability and upgradability at every protocol layer and extension, from consensus protocol to governance processes, to VM interpreters and encoding. Seamless customization and hot-swappable upgrades.
+
+While wasmX blockchains can be used as a financial platform, our extensions enable a wide range of use cases: identity verification (wasmX already has Estonian eID signature verification), digital proof creation for transient web2 data, immutable time and space proofs for images and video, provable email standards for european citizens.
 
 ## Key Features
 
-### Fully Modular WASM Runtime
-wasmX replaces the traditional hard-coded blockchain kernel with a modular runtime built entirely from smart contracts compiled to WASM. This includes core protocol logic, enabling seamless customization and hot-swappable upgrades.
 
-### Language-Agnostic Smart Contracts
-Developers can write contracts in any language that compiles to WebAssembly, including Rust, AssemblyScript, C/C++, and even Solidity via an Ethereum compatibility layer. This drastically lowers the barrier for developers coming from diverse ecosystems.
+**wasmX is**:
+- multiVM: multiple virtual machines: EthereumVM, wasmX standard, CosmWasm standard. In plan: Risc-V, upholding compatibility with the future [EthereumVM](https://ethereum-magicians.org/t/long-term-l1-execution-layer-proposal-replace-the-evm-with-risc-v/23617)
+- language agnostic smart contracts: any language that compiles to WASM or has a WASM interpreter contract; wasmX supports now: AssemblyScript, Rust, C/C++, Golang/TinyGo, Solidity, Yul, EVM assembly, JavaScript, Python, visual language for finite state machine diagrams
+- agnostic WASM memory interface: supports adapters for reading and writing from/to WASM modules (a prerequisite for being language agnostic)
+- consensus protocol agnostic: the consusus protocol is implemented as an upgradable smart contract
+- WASM engine agnostic
+- extensible: aside from protocol extensibility through WASM contracts, we have also added core WASM host APIs for networking (GRPC, p2p), SQL databases, IMPA/SMTP protocol.
+- supports subchain creation: wasmX subchains are fully fledged blockchains, customised through a decentralized genesis process inscribed on an existing public or private blockchain
+- extensible with both deterministic and non-deterministic  features or determinism guaranteed by multi-party verified protocols (creating immutable proofs for web2 items, like web pages, emails and more)
+- mobile-friendly: we have ran wasmX blockchains on mobile (tested on both Android and iOS)
+- encoding agnostic (work in progress)
 
-### Rich Host APIs
-wasmX provides a powerful suite of host APIs that smart contracts can use:
+**wasmX makes a distinction between:**
+* deterministic contracts (public, external, on-chain) and non-deterministic contracts (can be internal, private, on private wasmX subchains)
+* deterministic host APIs and non-deterministic host APIs (usually system/protocol-level APIs)
 
-* Ethereum API – Supports existing Solidity contracts and tools.
+## Effects
 
-* WasmX Native API – Offers basic blockchain functions like storage, block info, and message handling.
+wasmX offers the building blocks for a global blockchain platform. Our flexibility enables both experienced software engineers and young individuals to build consequential applications for their use cases.
 
-* Multichain, crosschain & P2P APIs – For building interconnected blockchains and decentralized networks.
-
-* gRPC Request API – Facilitates secure, extensible cross-chain or off-chain service communication.
-
-* SQL & Key-Value Database APIs – Allowing structured and efficient on-chain/off-chain data access.
-
-* IMAP/SMTP APIs – Enabling email-native interactions, identity, and verifiable communication on-chain.
-
-### Built-In Interpreters for EVM, Python, JavaScript, and Diagrams
-wasmX includes multiple built-in interpreters, allowing contracts or modules to run code written in EVM bytecode, Python, JavaScript, and a custom diagram-based interpreter. The diagram interpreter is currently used to define and run consensus algorithms visually and declaratively, powering consensus logic for wasmX-based chains without hardcoding it into the binary.
-
-### AssemblyScript SDK
-wasmX already includes a dedicated SDK for AssemblyScript, offering a streamlined developer experience for building lightweight, high-performance contracts in a TypeScript-like language.
-
-### Cosmos Compatibility, Reinvented
-
-While wasmX is compatible with Cosmos SDK-based chains, it has been completely WASM-modularized, decoupling it from the limitations of monolithic Cosmos modules and enabling new forms of governance, logic upgrades, and experimentation, all while the chain is live and running.
+wasmX drastically lowers the barrier for developers coming from diverse ecosystems. Easy to use languages for smart contracts are a gateway for many beginners to learn coding and build applications for their peers.
 
 ## The most flexible platform
 

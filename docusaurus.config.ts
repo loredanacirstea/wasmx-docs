@@ -78,9 +78,10 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Overview',
+          label: 'overview',
+          to: '/docs/overview/introduction',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'blog', position: 'left'},
         {
           href: 'https://github.com/loredanacirstea/wasmx-docs',
           label: 'GitHub',
