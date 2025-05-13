@@ -39,9 +39,10 @@ Communication interfaces between the host application and smart contracts. This 
 - multi-chain API (one node, multiple chains)
 - cross-chain API (cross-chain transactions and queries)
 - system API: scheduler, background processes
+- AI (vector embeddings) databases
 
 
-## WASM core modules
+## wasmX core modules (WASM contracts)
 
 - roles
 - hooks
@@ -57,6 +58,6 @@ Communication interfaces between the host application and smart contracts. This 
 - various language interpreters
 - various consensus algorithms
 - dtype
-- identity verification (eIDs)
+- identity verification - European eID management
 - multichain registry
 - p2p chat

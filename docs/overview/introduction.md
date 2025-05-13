@@ -8,26 +8,28 @@ sidebar_position: 1
 
 This radical modularity enables full programmability and upgradability at every layer of the blockchain, empowering developers with unprecedented flexibility and control.
 
+wasmX is a self-funded volunteer project spanning 4+ years.
+
 ## wasmX platform: truly decentralized development
 
 wasmX enables fully independent (teams of) developers to work in parallel and in any language that can be compiled to WASM.
 wasmX blockchains can be upgraded while they are running, through on-chain governance, achieving full programmability and upgradability at every protocol layer and extension, from consensus protocol to governance processes, to VM interpreters and encoding. Seamless customization and hot-swappable upgrades.
 
-While wasmX blockchains can be used as a financial platform, our extensions enable a wide range of use cases: identity verification (wasmX already has Estonian eID signature verification), digital proof creation for transient web2 data, immutable time and space proofs for images and video, provable email standards for european citizens.
+While wasmX blockchains can be used as a financial platform, our extensions enable a wide range of use cases: identity verification (wasmX already has Estonian eID signature verification), digital proof creation for transient web2 data, immutable time and space proofs for images and video, provable email standards for European citizens.
 
 ## Key Features
 
 
 **wasmX is**:
 - multiVM: multiple virtual machines: EthereumVM, wasmX standard, CosmWasm standard. In plan: Risc-V, upholding compatibility with the future [EthereumVM](https://ethereum-magicians.org/t/long-term-l1-execution-layer-proposal-replace-the-evm-with-risc-v/23617)
-- language agnostic smart contracts: any language that compiles to WASM or has a WASM interpreter contract; wasmX supports now: AssemblyScript, Rust, C/C++, Golang/TinyGo, Solidity, Yul, EVM assembly, JavaScript, Python, visual language for finite state machine diagrams
+- language-agnostic smart contracts: any language that compiles to WASM or has a WASM interpreter contract; wasmX supports now: AssemblyScript, Rust, C/C++, Golang/TinyGo, Solidity, Yul, EVM assembly, JavaScript, Python, visual language for finite state machine diagrams
 - agnostic WASM memory interface: supports adapters for reading and writing from/to WASM modules (a prerequisite for being language agnostic)
-- consensus protocol agnostic: the consusus protocol is implemented as an upgradable smart contract
+- consensus protocol agnostic: the consensus protocol is implemented as an upgradable smart contract
 - WASM engine agnostic
 - extensible: aside from protocol extensibility through WASM contracts, we have also added core WASM host APIs for networking (GRPC, p2p), SQL databases, IMPA/SMTP protocol.
-- supports subchain creation: wasmX subchains are fully fledged blockchains, customised through a decentralized genesis process inscribed on an existing public or private blockchain
-- extensible with both deterministic and non-deterministic  features or determinism guaranteed by multi-party verified protocols (creating immutable proofs for web2 items, like web pages, emails and more)
-- mobile-friendly: we have ran wasmX blockchains on mobile (tested on both Android and iOS)
+- supports subchain creation: wasmX subchains are fully fledged blockchains, customized through a decentralized genesis process inscribed on an existing public or private blockchain
+- extensible with both deterministic and non-deterministic  features or determinism guaranteed by multi-party verified protocols (creating immutable proofs for web2 items, like web pages, emails, and more)
+- mobile-friendly: we have run wasmX blockchains on mobile (tested on both Android and iOS)
 - encoding agnostic (work in progress)
 
 **wasmX makes a distinction between:**
