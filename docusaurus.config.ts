@@ -31,6 +31,16 @@ const config: Config = {
     locales: ['en'],
   },
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap',
+      },
+    },
+  ],
+
   presets: [
     [
       'classic',
