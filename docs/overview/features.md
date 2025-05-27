@@ -25,9 +25,9 @@ sidebar_position: 3
 
 Communication interfaces between the host application and smart contracts. This interface may include imperative execution commands from contract-to-host and reentry mechanisms for host-to-contract communication.
 
-- ewasm (ethereumVM in WASM)
-- cosmwasm
-- wasmX blockchain-specific APIs
+- [ewasm (ethereumVM in WASM)](../apis/ewasm.md)
+- [cosmwasm](../apis/cosmwasm.md)
+- [wasmX blockchain-specific APIs](../apis/wasmx.md)
 - protocol APIs
 - GRPC API
 - HTTP REST API

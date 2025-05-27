@@ -59,7 +59,7 @@ sidebar_position: 2
 
 ### VM host API extensions
 
-* **wasmX**: yes, host API extensions are supported. Current API interfaces: wasmX, ewasm (EVM in WASM), CosmWasm, p2p, grpc, multichain, crosschain, SQL-like and key-value databases, IMAP, SMTP.
+* **wasmX**: yes, host API extensions are supported. Current API interfaces: wasmX, [ewasm (EVM in WASM)](../apis/ewasm.md), [CosmWasm](../apis/cosmwasm.md), p2p, grpc, multichain, crosschain, SQL-like and key-value databases, IMAP, SMTP.
 * **EthereumVM**: no
 * **CosmWasm**: no
 
