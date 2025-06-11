@@ -41,6 +41,13 @@ const config: Config = {
     },
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+  // In order for Mermaid code blocks in Markdown to work,
+  // you also need to enable the Remark plugin with this option
+  markdown: {
+    mermaid: true,
+  },
+
   presets: [
     [
       'classic',
@@ -147,6 +154,10 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
+      // default, neutral, dark, forest, base
     },
   } satisfies Preset.ThemeConfig,
 };

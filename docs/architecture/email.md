@@ -85,11 +85,25 @@ Allows the sender's mail server to digitally sign email messages using their dom
 
 * https://datatracker.ietf.org/doc/html/rfc7489
 
-1. Check DKIM signature
-2. Check SPF
-3. Check alignment: `header.From` domain - DKIM `d=` domain - SPF `MAILFROM` domain must match. (*required)
+1. Check [DKIM signature](#dkim-domainkeys-identified-mail)
+2. Check [SPF](#spf-sender-policy-framework)
+3. Check alignment (*required). Domains must match:
+    * [`header.From`](#from) domain
+    * [DKIM](#dkim-domainkeys-identified-mail) `d=` domain
+    * [SPF](#spf-sender-policy-framework) `MAILFROM` domain
 
 If alignment (3) + one of SPF (2) or DKIM (1) passes → DMARC passes
+
+```mermaid
+flowchart TB
+  A[Start] --> B{Domains match}
+  B -->|Yes| C[SPF check]
+  B -->|No| D[FAIL]
+  C -->|Yes| F[PASS]
+  C -->|No| E[DKIM check]
+  E -->|Yes| F[PASS]
+  E -->|No| D[FAIL]
+```
 
 ## ARC (Authenticated Received Chain)
 
