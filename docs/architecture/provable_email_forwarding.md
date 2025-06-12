@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Provable Email Forwarding
 description: Provable Manual Email Forwarding (user-triggered)
 image: /img/email1.png
-keywords: [SPF, DKIM, DMARC, ARC, email, Sender Policy Framework, DomainKeys Identified Mail, Domain based Message Authentication, Authenticated Received Chain, cryptography, forwarding, email forwarding]
+keywords: [SPF, DKIM, DMARC, ARC, email, Sender Policy Framework, DomainKeys Identified Mail, Domain-based Message Authentication, Authenticated Received Chain, cryptography, forwarding, email forwarding]
 ---
 
 # Provable Email Forwarding
@@ -23,7 +23,7 @@ https://www.iana.org/assignments/message-headers/message-headers.xhtml
 
 Current standards for [manual email forwarding](./email#manual-forwarding) do not allow users to verify the authenticity of a forwarded email. The email body is often changed by the email client itself.
 
-**Why?**: Because society needs provability in order to have peace. And if communications are provable digitally, it reduces the need for abusive institution to seeze devices that may be an intrinsic part of your identity and everyday life.
+**Why?**: Because society needs provability in order to have peace. And if communications are provable digitally, it reduces the need for abusive institutions to seize devices that may be an intrinsic part of your identity and everyday life.
 
 ## 1. Provable Manual Forwarding with ARC
 
@@ -50,9 +50,9 @@ Current standards for [manual email forwarding](./email#manual-forwarding) do no
 * can verify original email authenticity
 * provable intermediary chain
 * maintain compatibility with current email verification checks, so emails are not marked as invalid or spam
-* can work even without MTA support (custom headers are produced by MUAs, with user-controlled keys and blockchain published public keys) - decentralization of protocol, users can choose individually
+* can work even without MTA support (custom headers are produced by MUAs, with user-controlled keys and blockchain-published public keys) - decentralization of protocol, users can choose individually
 * historical email verification for `DKIM`, `ARC` and `PROVABLE` headers
-* maintains integrity of context/thread by including the `References` of previous emails.
+* maintains the integrity of context/thread by including the `References` of previous emails.
 
 **CONs:**
 TBD
@@ -71,7 +71,7 @@ ARC headers
 ```
 
 * original `DKIM-Signature` is kept, even if it may be expired
-* original ARC headers, if email was automatically forwarded
+* original ARC headers, if the email was automatically forwarded
 
 ### Changed Headers by Forwarding MTA
 
@@ -110,7 +110,7 @@ Provable-Forward-Chain-Signature
 
 ### `Provable-Email-Registry`
 
-* a decentralized registry where email body hashes `bh`, `Message-ID`, signature hashes (e.g. DKIM-Signature, ARC headers signatures) can be registered for authentication verification. While respecting user privacy.
+* a decentralized registry where email body hashes `bh`, `Message-ID`, and signature hashes (e.g. DKIM-Signature, ARC headers signatures) can be registered for authentication verification. While respecting user privacy.
 * users may also register their consent for their emails to be forwarded or not, or to be notified when a provable forward happens.
 
 ### `Provable-Forward-Origin-DKIM-Context`
@@ -160,11 +160,11 @@ Provable-Forward-Chain: i=1; a=sha256; f=my@email.com>; x=<hash>
 
 ### Notes:
 
-Forwarding also registers in the email registry, linked to the original `DKIM-Signature` hash, `bh`, `MessageID`, maybe header hash:
+Forwarding also registers in the email registry, linked to the original `DKIM-Signature` hash, `bh`, `MessageID`, and maybe header hash:
 * your DKIM-Signature hash
 * new `Message-ID`
 
-`DKIM-Signature` must contain in `h` field:
+`DKIM-Signature` must contain in the `h` field:
 ```
 From
 To

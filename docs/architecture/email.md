@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Email Verification Protocols
 description: Email Verification Protocols (SPF, DKIM, DMARC, ARC)
 image: /img/email1.png
-keywords: [SPF, DKIM, DMARC, ARC, email, Sender Policy Framework, DomainKeys Identified Mail, Domain based Message Authentication, Authenticated Received Chain, cryptography]
+keywords: [SPF, DKIM, DMARC, ARC, email, Sender Policy Framework, DomainKeys Identified Mail, Domain-based Message Authentication, Authenticated Received Chain, cryptography]
 ---
 
-# Email Verification Protocols
+# Email Verification Protocols Now
 
 ## SPF (Sender Policy Framework)
 
@@ -372,7 +372,7 @@ ARC-Seal: i=3;
 
 ## Envelope
 
-The IMAP Envelope is extracted from the SMTP transaction metadata when the email was received by the server.
+The IMAP Envelope is extracted from the SMTP transaction metadata when the email is received by the server.
 
 | Field              | Source                       | Example                           |
 | ------------------ | ---------------------------- | --------------------------------- |
@@ -616,7 +616,7 @@ References
 In-Reply-To
 ```
 
-+  changed email body (and therefore `bh` field)
++ changed email body (and therefore `bh` field)
 
 ### Added Headers by Receiving MTA
 
