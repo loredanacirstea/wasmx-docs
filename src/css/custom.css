@@ -47,3 +47,9 @@
   --ifm-hero-background-color: var(--ifm-color-primary);
   --ifm-hero-text-color: var(--ifm-font-color-base-inverse);
 } */
+
+/* Apply scroll to all preformatted blocks */
+.theme-code-block {
+  max-height: 400px;
+  overflow: auto;
+}
