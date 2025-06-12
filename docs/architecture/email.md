@@ -6,7 +6,7 @@ image: /img/email1.png
 keywords: [SPF, DKIM, DMARC, ARC, email, Sender Policy Framework, DomainKeys Identified Mail, Domain based Message Authentication, Authenticated Received Chain, cryptography]
 ---
 
-# Email
+# Email Verification Protocols
 
 ## SPF (Sender Policy Framework)
 
@@ -47,6 +47,11 @@ SPF record example for [mail.provable.dev](https://dns.google/resolve?type=TXT&n
 | `x` | Expiration                 | Integer (Unix timestamp) after which the signature is no longer valid.                                      |
 | `z` | Copied Headers             | Original headers (folded) to aid debugging; optional and rarely used.                                       |
 
+### `h=` signed headers
+
+* required: `From`
+* recommended: `From:To:Cc:Subject:Date:Message-ID:Content-Type:Content-Transfer-Encoding`
+
 
 ```email
 DKIM-Signature: v=1;
@@ -85,14 +90,7 @@ Allows the sender's mail server to digitally sign email messages using their dom
 
 * https://datatracker.ietf.org/doc/html/rfc7489
 
-1. Check [DKIM signature](#dkim-domainkeys-identified-mail)
-2. Check [SPF](#spf-sender-policy-framework)
-3. Check alignment (*required). Domains must match:
-    * [`header.From`](#from) domain
-    * [DKIM](#dkim-domainkeys-identified-mail) `d=` domain
-    * [SPF](#spf-sender-policy-framework) `MAILFROM` domain
-
-If alignment (3) + one of SPF (2) or DKIM (1) passes → DMARC passes
+### Flow
 
 ```mermaid
 flowchart TB
@@ -105,10 +103,39 @@ flowchart TB
   E -->|No| D[FAIL]
 ```
 
+1. Check [DKIM signature](#dkim-domainkeys-identified-mail)
+2. Check [SPF](#spf-sender-policy-framework)
+3. Check alignment (*required). Domains must match:
+    * [`header.From`](#from) domain
+    * [DKIM](#dkim-domainkeys-identified-mail) `d=` domain
+    * [SPF](#spf-sender-policy-framework) `MAILFROM` domain
+
+If alignment (3) + one of SPF (2) or DKIM (1) passes → DMARC passes
+
 ## ARC (Authenticated Received Chain)
 
 * https://datatracker.ietf.org/doc/html/rfc8617
 * https://arc-spec.org/
+
+### Flow
+
+Preserves the results of email authentication checks (SPF, DKIM, DMARC) as a message passes through intermediaries (like mailing lists or forwarders) that might otherwise break those checks — enabling the final recipient to make informed trust decisions even if the message has been modified.
+
+```mermaid
+flowchart TD
+  A[Sender sends message with SPF/DKIM/DMARC] --> B[ARC-Aware Intermediary receives message]
+  B --> C[Verify DKIM/SPF/DMARC]
+  C --> D[Add ARC-Authentication-Results AAR]
+  D --> E[Add ARC-Message-Signature AMS]
+  E --> F[Seal AAR + AMS + previous ARC-Seals with ARC-Seal]
+  F --> G[Forward message with updated ARC headers]
+  G --> H[Recipient receives message]
+  H --> I[Verify all ARC-Seals in chain]
+  I --> J{All ARC-Seals valid?}
+  J -- Yes --> K[Use ARC-Authentication-Results for policy decisions]
+  J -- No --> L[Reject/ignore authentication chain]
+```
+
 
 ### ARC-Authentication-Results
 
@@ -170,6 +197,10 @@ ARC-Authentication-Results: i=3; mx.google.com;
 | `bh`  | Body hash (base64 of hash of canonicalized body).                                              | `bh=abcdefg...=`         |Yes                           |
 | `b`   | Signature itself (base64). Must be empty (`b=`) at time of signing.                            | `b=abc123...`            |Yes                           |
 
+### `h=` signed headers
+
+* required: `From`
+* recommended: cover sender's DKIM signature context; e.g. `From:To:Subject:Date:Message-ID:DKIM-Signature:Content-Type:Content-Transfer-Encoding:MIME-Version`
 
 ```email
 ARC-Message-Signature: i=3;
@@ -191,6 +222,8 @@ ARC-Message-Signature: i=3;
 ```
 
 * cryptographically similar to `DKIM-Signature`, but the signed content has some differences.
+
+Captures and cryptographically preserves the message’s authentication state (headers and body) as received by an intermediate system (like a forwarder or mailing list), before it modifies or relays the message.
 
 ### ARC-Seal
 

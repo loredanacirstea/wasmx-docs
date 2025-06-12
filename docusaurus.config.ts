@@ -39,6 +39,36 @@ const config: Config = {
         href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap',
       },
     },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'WebSite',
+        name: "wasmX: the only WASM-modular blockchain engine capable of regeneration and metamorphosis",
+        description: "wasmX: the only WASM-modular blockchain engine capable of regeneration and metamorphosis",
+        url: "https://wasmx.provable.dev",
+        logo: 'https://wasmx.provable.dev/img/wasmx.png',
+      }),
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'SoftwareApplication',
+        name: 'WasmX',
+        alternateName: ['WasmX', 'MythosX'],
+        operatingSystem: "Cross-platform",
+        applicationCategory: "DeveloperApplication",
+        url: "https://wasmx.provable.dev",
+        description: "wasmX is the most flexible WebAssembly-based execution engine for smart contracts."
+      }),
+    },
   ],
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -52,6 +82,11 @@ const config: Config = {
     [
       'classic',
       {
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+        },
         docs: {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
@@ -82,6 +117,14 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {name: 'keywords', content: 'wasm, blockchain, smart contracts, webassembly, cosmos sdk, ethereum, vm, cosmwasm, crypto'},
+      {name: 'author', content: 'WasmX Team'},
+      {name: 'theme-color', content: '#4a5568'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:site', content: '@lorecirstea'},
+      {name: 'og:type', content: 'website'},
+    ],
     // Replace with your project's social card
     image: 'img/wasmx.png',
     navbar: {

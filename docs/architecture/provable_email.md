@@ -1,5 +1,9 @@
 # Provable Email
 
+wasmX offers email verification standards for truly provable email.
+
+[Current standards](./email.md) are not enough.
+
 ## Prelude
 
 * header registry:
