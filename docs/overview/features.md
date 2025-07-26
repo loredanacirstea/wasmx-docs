@@ -28,6 +28,8 @@ Communication interfaces between the host application and smart contracts. This 
 - [ewasm (ethereumVM in WASM)](../apis/ewasm.md)
 - [cosmwasm](../apis/cosmwasm.md)
 - [wasmX blockchain-specific APIs](../apis/wasmx.md)
+- WASI for blockchain
+- JS web bindings (TODO)
 - protocol APIs
 - GRPC API
 - HTTP REST API
