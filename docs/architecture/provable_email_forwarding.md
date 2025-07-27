@@ -19,31 +19,21 @@ https://www.iana.org/assignments/message-headers/message-headers.xhtml
 
 * deprecating `X-` prefix for custom headers https://datatracker.ietf.org/doc/html/rfc6648. Just use a unique and relevant prefix.
 
+## Technical Demo Video
+
+A 15 minute video with: explanation of why this is needed, technical summary, prototype demo with a custom email server doing multiple hops of forwarding.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5eWQqwad8wA?si=lgUuPgAo6USA38qD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Manual Forwarding Now
 
 Current standards for [manual email forwarding](./email#manual-forwarding) do not allow users to verify the authenticity of a forwarded email. The email body is often changed by the email client itself.
 
-**Why?**: Because society needs provability in order to have peace. And if communications are provable digitally, it reduces the need for abusive institutions to seize devices that may be an intrinsic part of your identity and everyday life.
+**Why bother?**: Because society needs provability in order to have peace. And if communications are provable digitally, it reduces the need for abusive institutions to seize devices that may be an intrinsic part of your identity and everyday life.
 
-## 1. Provable Manual Forwarding With ARC ?
+## Provable Manual Forwarding with Custom Headers & Decentralized Registries
 
-One idea that we may consider is adding ARC headers to manual forwarding:
-* similar to the ARC protcol used for automatic forwarding
-* do not change the original email
-* forwarding MTA's and receiving MTA's should add ARC headers
-
-**PROs:**
-* can verify original email authenticity
-* provable intermediary chain - `ARC-Seal` signs `ARC-Authentication-Results`, which must contain `smtp.mailfrom` (sending email account)
-
-**CONs:**
-* requires MTA-level control
-* `DKIM-Signature` expires and standard DKIM verification fails
-* DNS key rotation will make it impossible to verify DKIM and ARC signatures and forwarding will eventually fail
-* intermediary privacy concerns: ARC exposes the authentication results and MTA domains of all intermediaries — may reveal infrastructure, forwarding flows, or internal systems
-* end-user email clients (MUAs) rarely parse or display ARC results, so users won’t benefit without explicit client support or plugins.
-
-## 2. Provable Manual Forwarding with Custom Headers & Decentralized Registries
+We have created a protocol that is heavily inspired from the ARC protocol, for automatic forwarding. However, manual forwarding requires some headers to change (compared to the original, forwarded email) - like `From`, `To`, etc. Also, in the case of ARC, DNS key rotation will make it impossible to verify DKIM and ARC signatures and forwarding will eventually fail. Our `Provable-Forward` protocol solves these issues.
 
 * DNS key rotation is solved by keeping historical DNS public keys on a verifiable decentralized system
 
