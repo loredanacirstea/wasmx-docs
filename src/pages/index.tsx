@@ -20,8 +20,15 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
+            style={{marginRight: 10}}
             to="/docs/overview/introduction">
-            get started
+            know more
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            style={{marginLeft: 10}}
+            href="https://github.com/ark-us/wasmx">
+            the code
           </Link>
         </div>
       </div>

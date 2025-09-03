@@ -144,7 +144,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'blog', position: 'left'},
         {
-          href: 'https://github.com/loredanacirstea/wasmx-docs',
+          href: 'https://github.com/ark-us/wasmx',
           label: 'GitHub',
           position: 'right',
         },
@@ -166,10 +166,6 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/wasmX',
-            },
-            {
               label: 'Discord',
               href: 'https://discord.gg/8W5jeBke4f',
             },
@@ -180,16 +176,20 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Dev',
           items: [
+            {
+              label: 'wasmX',
+              href: 'https://github.com/ark-us/wasmx',
+            },
+            {
+              label: 'wasmx docs',
+              href: 'https://github.com/loredanacirstea/wasmx-docs',
+            },
             {
               label: 'Blog',
               to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/loredanacirstea/wasmx-docs',
-            },
+            }
           ],
         },
       ],
