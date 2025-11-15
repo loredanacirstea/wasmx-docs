@@ -40,8 +40,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="The most flexible and modular WASM-based blockchain. Multi-VM (EVM, CosmWASM, wasmX), language agnostic (Solidity, TinyGo, AssemblyScript, JavaScript, Python)">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
