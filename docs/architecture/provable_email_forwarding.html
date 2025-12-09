@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"wasmX: the only WASM-modular blockchain engine capable of regeneration and metamorphosis","description":"wasmX: the only WASM-modular blockchain engine capable of regeneration and metamorphosis","url":"https://wasmx.provable.dev","logo":"https://wasmx.provable.dev/img/wasmx.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org/","@type":"SoftwareApplication","name":"WasmX","alternateName":["WasmX","MythosX"],"operatingSystem":"Cross-platform","applicationCategory":"DeveloperApplication","url":"https://wasmx.provable.dev","description":"wasmX is the most flexible WebAssembly-based execution engine for smart contracts."}</script><link rel="stylesheet" href="/assets/css/styles.752ccb6d.css">
-<script src="/assets/js/runtime~main.2fbbff65.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f7a0a645.js" defer="defer"></script>
 <script src="/assets/js/main.b0691532.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -40,6 +40,8 @@
 <p>Current standards for <a href="/docs/architecture/email#manual-forwarding">manual email forwarding</a> do not allow users to verify the authenticity of a forwarded email. The email body is often changed by the email client itself.</p>
 <p><strong>Why bother?</strong>: Because society needs provability in order to have peace. And if communications are provable digitally, it reduces the need for abusive institutions to seize devices that may be an intrinsic part of your identity and everyday life.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="provable-manual-forwarding-with-custom-headers--decentralized-registries">Provable Manual Forwarding with Custom Headers &amp; Decentralized Registries<a href="#provable-manual-forwarding-with-custom-headers--decentralized-registries" class="hash-link" aria-label="Direct link to Provable Manual Forwarding with Custom Headers &amp; Decentralized Registries" title="Direct link to Provable Manual Forwarding with Custom Headers &amp; Decentralized Registries">​</a></h2>
+<p><strong>Code:</strong>
+<a href="https://github.com/loredanacirstea/mailverif" target="_blank" rel="noopener noreferrer">https://github.com/loredanacirstea/mailverif</a></p>
 <p>We have created a protocol that is heavily inspired from the ARC protocol, for automatic forwarding. However, manual forwarding requires some headers to change (compared to the original, forwarded email) - like <code>From</code>, <code>To</code>, etc. Also, in the case of ARC, DNS key rotation will make it impossible to verify DKIM and ARC signatures and forwarding will eventually fail. Our <code>Provable-Forward</code> protocol solves these issues.</p>
 <ul>
 <li>DNS key rotation is solved by keeping historical DNS public keys on a verifiable decentralized system</li>
