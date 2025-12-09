@@ -33,6 +33,9 @@ Current standards for [manual email forwarding](./email#manual-forwarding) do no
 
 ## Provable Manual Forwarding with Custom Headers & Decentralized Registries
 
+**Code:**
+https://github.com/loredanacirstea/mailverif
+
 We have created a protocol that is heavily inspired from the ARC protocol, for automatic forwarding. However, manual forwarding requires some headers to change (compared to the original, forwarded email) - like `From`, `To`, etc. Also, in the case of ARC, DNS key rotation will make it impossible to verify DKIM and ARC signatures and forwarding will eventually fail. Our `Provable-Forward` protocol solves these issues.
 
 * DNS key rotation is solved by keeping historical DNS public keys on a verifiable decentralized system
